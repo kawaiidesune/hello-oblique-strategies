@@ -1,10 +1,10 @@
 <?php
 /**
- * @package Oblique_Strategies
+ * @package Hello Oblique_Strategies
  * @version 0.1
  */
 /*
-Plugin Name: Oblique Strategies
+Plugin Name: Hello Oblique Strategies
 Plugin URI: http://xn--vroniquebellamy-bnb.fr/en/resources/plugins/oblique-strategies/
 Description: This is not just a plugin, it includes a list of the Oblique Strategies by Brian Eno. When activated you will see the text from a random Oblique Strategies card in the upper right of your admin screen on every page.
 Author: Véronique Bellamy
@@ -12,7 +12,7 @@ Version: 0.1
 Author URI: https://xn--vroniquebellamy-bnb.fr/
 */
 
-function oblique_strategies_get_strategy() {
+function hello_oblique_strategies_get_strategy() {
 	/** These are the Oblique Strategies */
 	$strategies = "Abandon desire
 Abandon normal instruments
@@ -182,8 +182,8 @@ Your mistake was a hidden intention
 }
 
 // This just echoes the chosen line, we'll position it later.
-function oblique_strategies() {
-	$chosen = oblique_strategies_get_strategy();
+function hello_oblique_strategies() {
+	$chosen = hello_oblique_strategies_get_strategy();
 	$lang   = '';
 	if ( 'en_' !== substr( get_user_locale(), 0, 3 ) ) {
 		$lang = ' lang="en"';
@@ -198,10 +198,10 @@ function oblique_strategies() {
 }
 
 // Now we set that function up to execute when the admin_notices action is called.
-add_action( 'admin_notices', 'oblique_strategies' );
+add_action( 'admin_notices', 'hello_oblique_strategies' );
 
 // We need some CSS to position the paragraph.
-function oblique_css() {
+function hello_oblique_css() {
 	echo "
 	<style type='text/css'>
 	#oblique {
@@ -229,4 +229,4 @@ function oblique_css() {
 	";
 }
 
-add_action( 'admin_head', 'oblique_css' );
+add_action( 'admin_head', 'hello_oblique_css' );
